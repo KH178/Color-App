@@ -2,9 +2,27 @@ import React, { Component } from 'react';
 import { ChromePicker } from 'react-color';
 import Button from '@material-ui/core/Button';
 import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
+import { withStyles } from '@material-ui/core/styles';
 
 
-
+const styles = {
+    colorPickerContainer:{
+        width: '100%', 
+    },
+    colorPicker:{
+        width: '100% !important',
+        marginTop: '2rem',
+    },
+    addColor:{
+        width: '100%',
+        padding: '1rem',
+        marginTop: '1rem',
+        fontSize: '2rem'
+    },
+    colorNameInput:{
+        width: '100%',
+    }
+}
 
 class ColorPickerForm extends Component {
     constructor(props){
@@ -36,28 +54,32 @@ class ColorPickerForm extends Component {
 
     }
  
-
     render() {
-        const {isDisabled} = this.props;
+        const {isDisabled, classes} = this.props;
         const {bgColor,newColorName} = this.state;
         return (
-        <div>
+        <div className={classes.colorPickerContainer}>
             <ChromePicker onChangeComplete={event => {
                 this.setState({bgColor:event.hex})}
                 } color={bgColor}
+                className={classes.colorPicker}
                />
             <ValidatorForm onSubmit={this.handleOnSubmit}>
                 <TextValidator value={newColorName} 
                     onChange={this.handleFormChange} 
                     name='newColorName'
+                    className={classes.colorNameInput}
+                    margin="normal"
+                    variant="outlined"
+                    label="Color name"
                     validators={['required','isColorNameUnique','isColorUnique']}
                     errorMessages={['This field is required!','Color name must be unique!','Color already used!']}
                   />
-            <Button type={"submit"} variant="contained" color="primary" style={{backgroundColor:!isDisabled && bgColor}} disabled={isDisabled}>{isDisabled ? 'Palette Full':'Add Color'}</Button>
+            <Button type={"submit"} variant="contained" className={classes.addColor} color="primary" style={{backgroundColor:!isDisabled && bgColor}} disabled={isDisabled}>{isDisabled ? 'Palette Full':'Add Color'}</Button>
             </ValidatorForm>      
         </div>
         );
     }
 }
 
-export default ColorPickerForm;
+export default withStyles(styles)(ColorPickerForm);
