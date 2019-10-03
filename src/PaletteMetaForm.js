@@ -20,7 +20,6 @@ class PaletteMetaForm extends Component {
             stage:'form'
         }
         this.handleClickOpen = this.handleClickOpen.bind(this);
-        // this.handleClose = this.handleClose.bind(this);
         this.handleSetNewPaletteName = this.handleSetNewPaletteName.bind(this);
         this.showEmojiPicker = this.showEmojiPicker.bind(this);
         this.savePalette = this.savePalette.bind(this);
@@ -35,17 +34,9 @@ class PaletteMetaForm extends Component {
 
     handleClickOpen (){
         this.setState({
-            open: true,
             stage : 'form'
         })
       };
-    
-    // handleClose(){
-    //     this.setState({
-    //         open: false
-    //     })
-    //     this.props.hideDialogForm()
-    //   };
 
       handleSetNewPaletteName(evt){
         this.setState({
@@ -61,9 +52,8 @@ class PaletteMetaForm extends Component {
         this.props.handleSave(this.state.newPaletteName, emoji.native)
       }
     render() {
-        const {open,newPaletteName,stage} = this.state;
+        const {newPaletteName,stage} = this.state;
         const {hideDialogForm} = this.props;
-        //handleSave(newPaletteName)
         return (
             <div>
             <Dialog open={stage === 'emoji'} onClose={hideDialogForm}>

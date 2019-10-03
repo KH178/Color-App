@@ -6,46 +6,11 @@ import {Link} from 'react-router-dom';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
 import PaletteMetaForm from './PaletteMetaForm';
 import styles from './styles/NewPaletteFormNavbarStyles';
-
-// const drawerWidth = '350';
-
-// const styles = theme => ({
-//     root:{
-//         display: 'flex'
-//     },
-//     appBar: {
-//         transition: theme.transitions.create(['margin', 'width'], {
-//           easing: theme.transitions.easing.sharp,
-//           duration: theme.transitions.duration.leavingScreen,
-//         }),
-//         flexDirection: 'row',
-//         justifyContent: 'space-between',
-//         alignItems: 'center',
-//         heigth: '64px'
-//       },
-//       appBarShift: {
-//         width: `calc(100% - ${drawerWidth}px)`,
-//         marginLeft: drawerWidth,
-//         transition: theme.transitions.create(['margin', 'width'], {
-//           easing: theme.transitions.easing.easeOut,
-//           duration: theme.transitions.duration.enteringScreen,
-//         }),
-//       },
-//       navBtns:{
-//           marginRight: '1rem',
-//           '& a':{
-//             textDecoration: 'none',
-//             }
-//       },
-//       button:{
-//           margin: '0 .5rem',
-//       }
-// })
+import CreateIcon from '@material-ui/icons/Create';
 
 class NewPaletteFormNavbar extends Component {
     constructor(props){
@@ -55,21 +20,8 @@ class NewPaletteFormNavbar extends Component {
         }
         this.handleformShowing = this.handleformShowing.bind(this)
         this.hideDialogForm = this.hideDialogForm.bind(this)
-        // this.handleDrawerOpen = this.handleDrawerOpen.bind(this)
-        // this.handleSetNewPaletteName = this.handleSetNewPaletteName.bind(this)
     }
-    // componentDidMount(){
-    //     ValidatorForm.addValidationRule('PaletteNameUnique',(value) => {
-    //         return this.props.palettes.every(({paletteName})=> paletteName.toLowerCase() !== value.toLowerCase()
-    //         )
-    //        });
-    // }
-   
-    // handleSetNewPaletteName(evt){
-    //     this.setState({
-    //         newPaletteName: evt.target.value
-    //     })
-    //   } 
+
     handleformShowing(){
         this.setState({
             formShowing: true
@@ -103,7 +55,7 @@ class NewPaletteFormNavbar extends Component {
                     edge="start"
                     className={clsx(classes.menuButton, open && classes.hide)}
                 >
-                     <MenuIcon />
+                     <CreateIcon />
                 </IconButton>}
                 <Typography variant="h6" noWrap>
                     Create A Palette 

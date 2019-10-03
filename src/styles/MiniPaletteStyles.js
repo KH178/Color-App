@@ -6,8 +6,9 @@ export default {
         position: 'relative',
         overflow: 'hidden',
         border: '1px solid black',
-        '&:hover':{
-            cursor: 'pointer',
+        cursor: 'pointer',
+        '&:hover svg':{
+            opacity: '1'
         }
 
     },
@@ -17,7 +18,6 @@ export default {
         width: '100%',
         borderRadius: '5px',
         overflow: 'hidden'
-
     },
     title:{
         display: 'flex',
@@ -41,5 +41,18 @@ export default {
         margin: '0 auto',
         position: 'reletive',
         marginBottom: '-4px'
+    },
+    deleteIcon:{
+        color:'#fff',
+        position: 'absolute',
+        right: '0',
+        top: '0',
+        backgroundColor: 'red',
+        height: '20px',
+        width: '20px',
+        padding: '10px',
+        zIndex: '1000',
+        opacity: '0',
+        transition: 'all .3s ease-in-out'
     }
 }

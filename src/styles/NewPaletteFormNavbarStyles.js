@@ -1,5 +1,6 @@
-const drawerWidth = '350';
-
+import { DRAWER_WIDTH  } from '../constents';
+import Sizes from './Sizes';
+const drawerWidth = DRAWER_WIDTH ;
 const styles = theme => ({
     root:{
         display: 'flex'
@@ -26,10 +27,17 @@ const styles = theme => ({
           marginRight: '1rem',
           '& a':{
             textDecoration: 'none',
+            },
+            [Sizes.down('md')]:{
+              marginRight: '0',            
             }
       },
       button:{
           margin: '0 .5rem',
+          [Sizes.down('xs')]:{
+            margin: '.3rem',
+            padding: '0.3rem'
+          }
       }
 })
 

@@ -1,4 +1,4 @@
-
+import Sizes from './Sizes';
 export default {
     Palette:{
         height: '100vh',
@@ -38,6 +38,14 @@ export default {
             fontSize: '1rem',
             lineHeight: '30px',
             textDecoration: 'none',  
+        },
+        [Sizes.down('md')]:{
+            width: '100%',
+            height: '20%'
+        } ,
+        [Sizes.down('xs')]:{
+            width: '100%',
+            height: '10%'
         }
     },
 

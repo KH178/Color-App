@@ -1,3 +1,4 @@
+import Sizes from './Sizes';
 export default {
     NavBar:{
         display: 'flex',
@@ -18,6 +19,9 @@ export default {
         '& a':{
             textDecoration: 'none',
             color: 'rgb(88, 88, 88)',
+        },
+        [Sizes.down('xs')]:{
+            display: 'none'
         }
      },
      Slider:{
@@ -37,6 +41,9 @@ export default {
         '& .rc-slider-mark':{
             paddingTop:'7px',
             color: 'red',
+        },
+        [Sizes.down('md')]:{
+            width: '150px'
         }
     },
     SelectContainer:{
