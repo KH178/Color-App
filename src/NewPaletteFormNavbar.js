@@ -36,7 +36,7 @@ class NewPaletteFormNavbar extends Component {
 
 
     render() { 
-        const {classes, open, handleDrawer, handleSave} = this.props;
+        const {classes, open, handleDrawer, handleSave,palettes} = this.props;
         return (
             <div className={classes.root}>
             <CssBaseline />
@@ -62,7 +62,7 @@ class NewPaletteFormNavbar extends Component {
                 </Typography>
                 </Toolbar>
                 <div className={classes.navBtns}>
-                {this.state.formShowing && <PaletteMetaForm palettes={this.props.palettes} handleSave={handleSave} hideDialogForm={this.hideDialogForm}/>}
+                {this.state.formShowing && <PaletteMetaForm palettes={palettes} handleSave={handleSave} hideDialogForm={this.hideDialogForm}/>}
                 <Link to='/'>
                 <Button variant="contained" color="secondary" className={classes.button}>Go Back</Button>
                 </Link>

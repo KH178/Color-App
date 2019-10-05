@@ -5,9 +5,9 @@ import {SortableElement} from 'react-sortable-hoc';
 import styles from './styles/DragableColorBoxStyles';
 
 function DragableColorBox(props) {
-    const {classes, deleteColorBox, name} = props
+    const {classes, deleteColorBox, name, color} = props
     return (
-        <div style={{backgroundColor:props.color}} className={classes.root}>
+        <div style={{backgroundColor:color}} className={classes.root}>
             <div className={classes.boxContent}>
                 <span>{name}</span>
                 <DeleteForeverRoundedIcon className={classes.deleteIcon} onClick={deleteColorBox}/>

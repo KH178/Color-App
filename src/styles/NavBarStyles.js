@@ -43,6 +43,9 @@ export default {
             color: 'red',
         },
         [Sizes.down('md')]:{
+            width: '250px'
+         },
+         [Sizes.down('sm')]: {
             width: '150px'
         }
     },

@@ -1,28 +1,27 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {withStyles} from '@material-ui/styles'; 
 import styles from './styles/MiniPaletteStyles';
 import DeleteRoundedIcon from '@material-ui/icons/DeleteRounded';
 
 
-class MiniPalette extends Component{
+class MiniPalette extends PureComponent {
     constructor(props){
         super(props);
         this.detetePalette = this.detetePalette.bind(this);
+
     }
     detetePalette(e){
         e.stopPropagation();
-        console.log(this.props);
-        console.log(this.props.id);
-        this.props.deletePalette(this.props.id);
+        this.props.openDialog(this.props.id);
         
     }
-    render(){
-    const {classes,paletteName,emoji,colors, handleClick} = this.props;
-    const miniColorBoxes = colors.map(color=>(
+    render() {
+        const {classes,paletteName,emoji,colors, handleClick,id} = this.props;
+        const miniColorBoxes = colors.map(color=>(
         <div className={classes.miniColorBox} style={{backgroundColor:color.color}} key={color.name}></div>
     ))
         return (
-            <div className={classes.root} onClick={handleClick}>
+            <div className={classes.root} onClick={()=>handleClick(id)}>
                 <DeleteRoundedIcon
                  className={classes.deleteIcon}
                  onClick={this.detetePalette}                 

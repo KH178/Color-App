@@ -14,10 +14,6 @@ export default {
         '&:hover button':{
             opacity: '1'
         },
-        [Sizes.down('lg')]:{
-            width: '25%',
-            height: props => props.showLink ? '5% ': '10%',
-        },
         [Sizes.down('md')]:{
             width: '50%',
             height: props => props.showLink ? '10% ': '20%',

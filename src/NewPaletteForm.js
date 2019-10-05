@@ -10,12 +10,13 @@ import DragableColorList from './DragableColorList';
 import arrayMove from 'array-move';
 import NewPaletteFormNavbar from './NewPaletteFormNavbar';
 import ColorPickerForm from './ColorPickerForm';
-import useStyles from  './styles/NewPaletteFormStyles'
+import useStyles from './styles/NewPaletteFormStyles';
+import seedColors from './seedColors';
 
 function NewPaletteForm(props) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
-  const [colors, addColor] = useState(props.palettes[0].colors);
+  const [colors, addColor] = useState(seedColors[0].colors);
   const [newPaletteName] = useState('');
   const maxColors = 20;
   const isDisabled = colors.length >= maxColors ? true : false;
@@ -62,11 +63,16 @@ function NewPaletteForm(props) {
     }
 
     const addRandomColor = () => {
-      const paletteToChooseFrom = props.palettes.slice(1);
-      const randomPalette = paletteToChooseFrom[Math.floor(Math.random()*paletteToChooseFrom.length)];
-      const randomColor = randomPalette.colors[Math.floor(Math.random()*randomPalette.colors.length)];
+      const allColors = props.palettes.map(p => p.colors).flat();
+      let rand;
+      let randomColor;
+      let isDuplicate = true;
+      while (isDuplicate) {
+        rand = Math.floor(Math.random() * allColors.length);
+        randomColor = allColors[rand];
+       isDuplicate = colors.some(color => color.name === randomColor.name);
+      }
      addColor([...colors,randomColor]);
-     
     }
     
   return (
@@ -104,7 +110,7 @@ function NewPaletteForm(props) {
         })}
       >
         <div className={classes.drawerHeader} />
-         <DragableColorList colors={colors} removeColor={removeColor} axis="xy" onSortEnd={onSortEnd}/>
+        <DragableColorList colors={colors} removeColor={removeColor} axis="xy" onSortEnd={onSortEnd} distance={20}/>
       </main>
     </div>
   );
