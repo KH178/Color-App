@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/Color-App/static/css/main.5a004eff.chunk.css",
+    "main.js": "/Color-App/static/js/main.dbda18a4.chunk.js",
+    "main.js.map": "/Color-App/static/js/main.dbda18a4.chunk.js.map",
+    "runtime-main.js": "/Color-App/static/js/runtime-main.9ba65c03.js",
+    "runtime-main.js.map": "/Color-App/static/js/runtime-main.9ba65c03.js.map",
+    "static/css/2.12f73d73.chunk.css": "/Color-App/static/css/2.12f73d73.chunk.css",
+    "static/js/2.f8b906c6.chunk.js": "/Color-App/static/js/2.f8b906c6.chunk.js",
+    "static/js/2.f8b906c6.chunk.js.map": "/Color-App/static/js/2.f8b906c6.chunk.js.map",
+    "index.html": "/Color-App/index.html",
+    "precache-manifest.a6128240b04fb8985faee6780b3d9bdb.js": "/Color-App/precache-manifest.a6128240b04fb8985faee6780b3d9bdb.js",
+    "service-worker.js": "/Color-App/service-worker.js",
+    "static/css/2.12f73d73.chunk.css.map": "/Color-App/static/css/2.12f73d73.chunk.css.map",
+    "static/css/main.5a004eff.chunk.css.map": "/Color-App/static/css/main.5a004eff.chunk.css.map",
+    "static/js/2.f8b906c6.chunk.js.LICENSE.txt": "/Color-App/static/js/2.f8b906c6.chunk.js.LICENSE.txt",
+    "static/media/bg.svg": "/Color-App/static/media/bg.543e33d2.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9ba65c03.js",
+    "static/css/2.12f73d73.chunk.css",
+    "static/js/2.f8b906c6.chunk.js",
+    "static/css/main.5a004eff.chunk.css",
+    "static/js/main.dbda18a4.chunk.js"
+  ]
+}
